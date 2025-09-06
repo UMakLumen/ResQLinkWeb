@@ -1,7 +1,5 @@
 
-  # Expand Resqlink App Details
-
-  This is a code bundle for Expand Resqlink App Details. The original project is available at https://www.figma.com/design/61VMoo3CiLNvpkq6MBSgPY/Expand-Resqlink-App-Details.
+  # ResQLink
 
   ## Running the code
 
