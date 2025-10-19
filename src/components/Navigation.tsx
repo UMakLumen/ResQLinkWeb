@@ -11,6 +11,7 @@ import {
   FacebookIcon,
 } from "lucide-react";
 import { useState } from "react";
+import resqLinkLogo from '../assets/logos/resqlink-android-icon-adaptive.png';
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img
-              src="/src/assets/logos/resqlink-android-icon-adaptive.png"
+              src={resqLinkLogo}
               alt=""
               className="h-6 w-6 text-white"
             />

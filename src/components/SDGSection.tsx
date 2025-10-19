@@ -1,5 +1,7 @@
 import { Badge } from "./ui/badge";
 import { Shield, Target, Globe, Heart, Users, TrendingUp } from "lucide-react";
+import sdg11Logo from '../assets/logos/sdg/E_WEB_11.png';
+import sdg13Logo from '../assets/logos/sdg/E_WEB_13.png';
 
 const sdgGoals = [
   {
@@ -8,7 +10,7 @@ const sdgGoals = [
     description:
       "Significantly reduce deaths, affected people, and economic losses from disasters",
     icon: (
-      <img className="h-full w-full" src="/src/assets/logos/sdg/E_WEB_11.png" />
+      <img className="h-full w-full" src={sdg11Logo} />
     ),
     gradient: "from-orange-500 to-red-500",
     targets: [
@@ -26,7 +28,7 @@ const sdgGoals = [
     description:
       "Strengthen resilience and adaptive capacity to climate-related hazards",
     icon: (
-      <img className="h-full w-full" src="/src/assets/logos/sdg/E_WEB_13.png" />
+      <img className="h-full w-full" src={sdg13Logo} />
     ),
     gradient: "from-green-500 to-blue-500",
     targets: [

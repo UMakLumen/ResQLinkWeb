@@ -1,4 +1,5 @@
 import { Navigation } from "../components/Navigation";
+import resqLinkLogo from '../assets/logos/resqlink-android-icon-adaptive.png';
 
 export default function TermsAndConditions() {
   return (
@@ -10,7 +11,7 @@ export default function TermsAndConditions() {
           <header className="mb-6">
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/src/assets/logos/resqlink-android-icon-adaptive.png"
+                src={resqLinkLogo}
                 alt="ResQLink"
                 className="h-10 w-10"
               />
