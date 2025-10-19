@@ -58,7 +58,7 @@ export function AITriageFlow() {
           </Badge>
           <h2 className="text-5xl md:text-6xl font-bold text-[#fefdf5] mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-[#fefdf5] to-[#e0eaff] bg-clip-text text-transparent">
-              Smart Triage System
+              Actionable Intelligence
             </span>
           </h2>
           <p className="text-xl text-[#e0eaff]/70 max-w-3xl mx-auto leading-relaxed">

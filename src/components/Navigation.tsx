@@ -22,7 +22,7 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img
-              src="./src/assets/logos/resqlink-android-icon-adaptive.png"
+              src="src/assets/logos/resqlink-android-icon-adaptive.png"
               alt=""
               className="h-6 w-6 text-white"
             />

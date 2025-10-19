@@ -82,7 +82,7 @@ export function PlatformOverview() {
           </Badge>
           <h2 className="text-5xl md:text-6xl font-bold text-[#fefdf5] mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-[#fefdf5] to-[#e0eaff] bg-clip-text text-transparent">
-              Built for Every Stakeholder
+              One Application, Multiple Stakeholders
             </span>
           </h2>
           <p className="text-xl text-[#e0eaff]/70 max-w-3xl mx-auto leading-relaxed">

@@ -165,7 +165,7 @@ export function FeaturesShowcase() {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-[#fefdf5] mb-4">
               <span className="bg-gradient-to-r from-[#fefdf5] to-[#e0eaff] bg-clip-text text-transparent">
-                Ground-Breaking Technology
+                Smart, Resilient, and Reliable
               </span>
             </h3>
             <p className="text-[#e0eaff]/70 max-w-2xl mx-auto">

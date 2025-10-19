@@ -5,6 +5,7 @@ import { AITriageFlow } from "./components/AITriageFlow";
 import { PlatformOverview } from "./components/PlatformOverview";
 import { SDGSection } from "./components/SDGSection";
 import { WaitlistSection } from "./components/WaitlistSection";
+import AchievementSection from "./components/Achievements";
 
 export default function App() {
   return (
@@ -13,6 +14,8 @@ export default function App() {
 
       {/* Hero Section */}
       <HeroSection />
+
+      <AchievementSection />
 
       {/* Features Section */}
       <FeaturesShowcase />
@@ -149,7 +152,7 @@ export default function App() {
                   Privacy Policy
                 </span>
                 <span className="hover:text-[#e0eaff]/70 transition-colors duration-300 cursor-pointer">
-                  Terms of Service
+                  Terms and Conditions
                 </span>
                 <span className="hover:text-[#e0eaff]/70 transition-colors duration-300 cursor-pointer">
                   Data Security

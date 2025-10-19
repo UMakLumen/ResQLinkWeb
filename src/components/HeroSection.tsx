@@ -14,11 +14,6 @@ export function HeroSection() {
 
       <div className="relative z-10 w-screen mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <div className="text-center">
-          {/* Badge */}
-          <Badge className="mb-8 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-[#e0eaff] border-[#e0eaff]/30 backdrop-blur-sm px-4 py-2">
-            <Zap className="h-4 w-4 mr-2" />
-            Powered by AI & Real-time Data
-          </Badge>
 
           {/* Main Heading */}
           <h1 className="text-6xl md:text-8xl font-bold text-[#fefdf5] mb-8 tracking-tight">
@@ -49,18 +44,6 @@ export function HeroSection() {
               Join Waitlist
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() =>
-                document
-                  .getElementById("features")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="hover:text-white border-[#e0eaff]/30 shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-4 text-lg rounded-2xl backdrop-blur-sm"
-            >
-              See How It Works
-            </Button>
           </div>
 
           {/* Stats */}
@@ -71,8 +54,12 @@ export function HeroSection() {
                   <Globe className="h-6 w-6 text-white" />
                 </div>
               </div>
-              <div className="text-3xl font-bold text-[#fefdf5] mb-2">24/7</div>
-              <div className="text-[#e0eaff]/70">Real-time Monitoring</div>
+              <div className="text-3xl font-bold text-[#fefdf5] mb-2">
+                Offline-First Compatability
+              </div>
+              <div className="text-[#e0eaff]/70">
+                Keeps people connected in all situations
+              </div>
             </div>
 
             <div className="bg-gradient-to-br from-[#e0eaff]/10 to-[#e0eaff]/5 backdrop-blur-sm border border-[#e0eaff]/20 rounded-2xl p-6">
@@ -82,9 +69,11 @@ export function HeroSection() {
                 </div>
               </div>
               <div className="text-3xl font-bold text-[#fefdf5] mb-2">
-                {"<2min"}
+                Rapid Response Tools
               </div>
-              <div className="text-[#e0eaff]/70">Response Time</div>
+              <div className="text-[#e0eaff]/70">
+                Enhanced tools for disaster response
+              </div>
             </div>
 
             <div className="bg-gradient-to-br from-[#e0eaff]/10 to-[#e0eaff]/5 backdrop-blur-sm border border-[#e0eaff]/20 rounded-2xl p-6">
@@ -94,9 +83,11 @@ export function HeroSection() {
                 </div>
               </div>
               <div className="text-3xl font-bold text-[#fefdf5] mb-2">
-                AI-Powered
+                AI-Powered Insights
               </div>
-              <div className="text-[#e0eaff]/70">Smart Analytics</div>
+              <div className="text-[#e0eaff]/70">
+                Smart Analytics and AI for actionable intelligence
+              </div>
             </div>
           </div>
         </div>
