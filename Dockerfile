@@ -14,7 +14,7 @@ RUN bun run build
 FROM nginx:alpine
 
 # copy built static files from the builder stage (Vite outputs to /app/dist)
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
 
 EXPOSE 80
 
