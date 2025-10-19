@@ -8,7 +8,7 @@ const sdgGoals = [
     description:
       "Significantly reduce deaths, affected people, and economic losses from disasters",
     icon: (
-      <img className="h-full w-full" src="src/assets/logos/sdg/E_WEB_11.png" />
+      <img className="h-full w-full" src="/src/assets/logos/sdg/E_WEB_11.png" />
     ),
     gradient: "from-orange-500 to-red-500",
     targets: [
@@ -26,7 +26,7 @@ const sdgGoals = [
     description:
       "Strengthen resilience and adaptive capacity to climate-related hazards",
     icon: (
-      <img className="h-full w-full" src="src/assets/logos/sdg/E_WEB_13.png" />
+      <img className="h-full w-full" src="/src/assets/logos/sdg/E_WEB_13.png" />
     ),
     gradient: "from-green-500 to-blue-500",
     targets: [
