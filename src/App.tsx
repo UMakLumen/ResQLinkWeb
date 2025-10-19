@@ -6,8 +6,14 @@ import { PlatformOverview } from "./components/PlatformOverview";
 import { SDGSection } from "./components/SDGSection";
 import { WaitlistSection } from "./components/WaitlistSection";
 import AchievementSection from "./components/Achievements";
+import { useEffect } from "react";
+import { updateSEO, DEFAULT_SEO } from "./utils/seo";
 
 export default function App() {
+  useEffect(() => {
+    // Update SEO for home page
+    updateSEO(DEFAULT_SEO.home);
+  }, []);
   return (
     <div className="w-screen overflow-hidden">
       <Navigation />

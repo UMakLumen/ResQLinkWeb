@@ -1,7 +1,13 @@
 import { Navigation } from "../components/Navigation";
 import resqLinkLogo from '../assets/logos/resqlink-android-icon-adaptive.png';
+import { useEffect } from "react";
+import { updateSEO, DEFAULT_SEO } from "../utils/seo";
 
 export default function TermsAndConditions() {
+  useEffect(() => {
+    // Update SEO for Terms & Conditions page
+    updateSEO(DEFAULT_SEO.termsAndConditions);
+  }, []);
   return (
     <div className="w-screen overflow-hidden bg-gradient-to-br from-[#0b0b0a] via-[#111110] to-[#060605] text-[#fefdf5]">
       <Navigation />
