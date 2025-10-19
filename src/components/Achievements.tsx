@@ -3,12 +3,17 @@ export default function AchievementSection() {
     <div className="h-66 bg-black">
       <div className="absolute overflow-hidden w-full h-full p-0">
         <img
+          className="absolute left-1/2 -translate-x-1/2 -top-40 -rotate-3 "
+          src="src/assets/20251013_172614.jpg"
+          alt=""
+        />
+        <img
           className="absolute bottom-80 scale-90 left-150 rotate-3"
           src="src/assets/photo_2025-10-14_07-26-26.jpg"
           alt=""
         />
         <img
-          className="absolute bottom-20 right-100 scale-50 -rotate-3"
+          className="absolute bottom-20 right-100 scale-50 -rotate-3 "
           src="src/assets/20251013_172614.jpg"
           alt=""
         />
