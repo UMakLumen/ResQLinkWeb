@@ -1,18 +1,19 @@
-# Stage 1: Build the app
-FROM node:21.7.0-alpine AS builder
+# Stage 1: Build the app using Bun
+FROM oven/bun:latest AS builder
 
 WORKDIR /app
 
-COPY package.json bun.lockb ./
+# copy project files (including bun.lockb)
 COPY . .
 
-RUN npm install --frozen-lockfile \
-	&& npm audit fix --force
-RUN npm run build
+# install deps using bun and build
+RUN bun install --frozen-lockfile
+RUN bun run build
 
 # Stage 2: Serve with Nginx
 FROM nginx:alpine
 
+# copy built static files from the builder stage (Vite outputs to /app/dist)
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
