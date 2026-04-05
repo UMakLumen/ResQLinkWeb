@@ -3,39 +3,65 @@ import { Badge } from "./ui/badge";
 import {
   Menu,
   X,
-  AlertTriangle,
-  Users,
-  Building2,
-  Phone,
-  Facebook,
   FacebookIcon,
+  Phone,
+  Monitor,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import resqLinkLogo from '../assets/logos/resqlink-android-icon-adaptive.png';
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["hero", "features", "platforms", "sdg", "waitlist"];
+      const current = sections.find((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: "#hero", label: "Home", id: "hero" },
+    { href: "#features", label: "Features", id: "features" },
+    { href: "#platforms", label: "Platforms", id: "platforms" },
+    { href: "#sdg", label: "SDG Impact", id: "sdg" },
+    { href: "#waitlist", label: "Join Waitlist", id: "waitlist" },
+  ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md">
-      <div className="w-screen mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a08]/80 backdrop-blur-xl border-b border-[#e0eaff]/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <img
-              src={resqLinkLogo}
-              alt=""
-              className="h-6 w-6 text-white"
-            />
-            <span className="text-[#fefdf5] font-bold text-xl tracking-tight">
-              ResQLink
-            </span>
-            <Badge
-              variant="secondary"
-              className="text-xs bg-[#e0eaff]/20 text-[#e0eaff] border-[#e0eaff]/30"
-            >
-              BETA
-            </Badge>
+          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div className="relative">
+              <div className="absolute inset-0 bg-blue-500/20 blur-lg rounded-full group-hover:bg-blue-500/40 transition-all duration-500"></div>
+              <img
+                src={resqLinkLogo}
+                alt=""
+                className="h-8 w-8 relative z-10"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[#fefdf5] font-bold text-xl tracking-tight leading-none">
+                ResQLink
+              </span>
+              <span className="text-[10px] text-[#e0eaff]/50 font-medium tracking-[0.2em] uppercase mt-1">
+                Emergency Management
+              </span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -77,24 +103,30 @@ export function Navigation() {
             </a>
           </div>
 
-          {/* User Type Selector & CTA */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-[#fefdf5] bg-black border-[#e0eaff]/30 hover:border-[#e0eaff]/50 transition-all duration-300"
-                onClick={() =>
-                  window.open(
-                    "https://www.facebook.com/resqlink.umak",
-                    "_blank"
-                  )
-                }
-              >
-                <FacebookIcon className="h-4 w-4 mr-1" />
-                Facebook Page
-              </Button>
-            </div>
+            <Button
+              size="sm"
+              className="bg-transparent text-[#e0eaff]/70 border border-[#e0eaff]/20 hover:text-[#e0eaff] hover:border-[#e0eaff]/50 hover:bg-transparent rounded-full px-5 shadow-none cursor-pointer"
+              onClick={() => window.open("https://web.resqlink.org/", "_blank")}
+            >
+              <Monitor className="h-4 w-4 mr-2" />
+              Open Web App
+            </Button>
+
+            <Button
+              size="sm"
+              className="bg-transparent text-[#e0eaff]/70 border border-[#e0eaff]/20 hover:text-[#e0eaff] hover:border-[#e0eaff]/50 hover:bg-transparent rounded-full px-6 shadow-none cursor-pointer"
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/resqlink.umak",
+                  "_blank"
+                )
+              }
+            >
+              <FacebookIcon className="h-4 w-4 mr-2 text-blue-400" />
+              Community
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -103,7 +135,7 @@ export function Navigation() {
               variant="outline"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-[#fefdf5] border-[#e0eaff]/30 hover:bg-[#e0eaff]/10"
+              className="text-[#fefdf5] bg-transparent border-[#e0eaff]/30 hover:bg-[#e0eaff]/10 hover:text-[#fefdf5]"
             >
               {isMenuOpen ? (
                 <X className="h-4 w-4" />
@@ -150,34 +182,17 @@ export function Navigation() {
               Download App
             </a>
 
-            <div className="pt-4 border-t border-[#e0eaff]/10">
-              <div className="space-y-2 mb-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full text-[#fefdf5] border-[#e0eaff]/30 hover:bg-[#e0eaff]/10"
-                >
-                  <Users className="h-4 w-4 mr-1" />
-                  Citizen Portal
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full text-[#fefdf5] border-[#e0eaff]/30 hover:bg-[#e0eaff]/10"
-                >
-                  <AlertTriangle className="h-4 w-4 mr-1" />
-                  Rescuer Dashboard
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full text-[#fefdf5] border-[#e0eaff]/30 hover:bg-[#e0eaff]/10"
-                >
-                  <Building2 className="h-4 w-4 mr-1" />
-                  LGU Command Center
-                </Button>
-              </div>
-              <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-lg">
+            <div className="pt-4 border-t border-[#e0eaff]/10 space-y-2">
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full text-[#e0eaff] bg-[#e0eaff]/10 border-[#e0eaff]/30 hover:bg-[#e0eaff]/20 cursor-pointer"
+                onClick={() => window.open("https://web.resqlink.org/", "_blank")}
+              >
+                <Monitor className="h-4 w-4 mr-1" />
+                Open Web App
+              </Button>
+              <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-lg cursor-pointer">
                 <Phone className="h-4 w-4 mr-1" />
                 Emergency Hotline
               </Button>

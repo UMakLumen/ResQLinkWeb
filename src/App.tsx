@@ -6,8 +6,10 @@ import { PlatformOverview } from "./components/PlatformOverview";
 import { SDGSection } from "./components/SDGSection";
 import { DownloadAppSection } from "./components/DownloadAppSection";
 import AchievementSection from "./components/Achievements";
+import { DashboardPreview } from "./components/DashboardPreview";
 import { useEffect } from "react";
 import { updateSEO, DEFAULT_SEO } from "./utils/seo";
+import { DemoModeProvider } from "./context/DemoModeContext";
 
 export default function App() {
   useEffect(() => {
@@ -15,7 +17,8 @@ export default function App() {
     updateSEO(DEFAULT_SEO.home);
   }, []);
   return (
-    <div className="w-screen overflow-hidden">
+    <DemoModeProvider>
+    <div className="w-full overflow-x-hidden">
       <Navigation />
 
       {/* Hero Section */}
@@ -28,6 +31,9 @@ export default function App() {
 
       {/* AI Triage Flow */}
       <AITriageFlow />
+
+      {/* LGU Command Dashboard Preview with Demo Mode */}
+      <DashboardPreview />
 
       {/* Platform Overview */}
       <section id="platforms">
@@ -45,15 +51,15 @@ export default function App() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-32 bg-gradient-to-br from-[#0a0a08] via-[#161613] to-[#1a1a17] relative"
+        className="py-32 bg-linear-to-br from-[#0a0a08] via-[#161613] to-[#1a1a17] relative"
       >
         {/* Background decorations */}
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-linear-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-linear-to-r from-red-500/10 to-orange-500/10 rounded-full blur-3xl"></div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl md:text-6xl font-bold text-[#fefdf5] mb-8 tracking-tight">
-            <span className="bg-gradient-to-r from-[#fefdf5] to-[#e0eaff] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#fefdf5] to-[#e0eaff] bg-clip-text text-transparent">
               Get Started Today
             </span>
           </h2>
@@ -62,10 +68,10 @@ export default function App() {
             for your community
           </p>
 
-          <div className="bg-gradient-to-br from-[#161613]/80 to-[#0a0a08]/60 backdrop-blur-md border border-[#e0eaff]/20 rounded-3xl shadow-2xl p-12">
+          <div className="bg-linear-to-br from-[#161613]/80 to-[#0a0a08]/60 backdrop-blur-md border border-[#e0eaff]/20 rounded-3xl shadow-2xl p-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               <div className="group">
-                <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 rounded-2xl w-fit mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-linear-to-r from-red-500 to-red-600 p-4 rounded-2xl w-fit mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -88,7 +94,7 @@ export default function App() {
               </div>
 
               <div className="group">
-                <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 rounded-2xl w-fit mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-linear-to-r from-blue-500 to-blue-600 p-4 rounded-2xl w-fit mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -113,7 +119,7 @@ export default function App() {
               </div>
 
               <div className="group">
-                <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-4 rounded-2xl w-fit mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-linear-to-r from-purple-500 to-purple-600 p-4 rounded-2xl w-fit mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -153,7 +159,7 @@ export default function App() {
                 <strong>UMak KALASAG DRRM</strong>.
               </p>
               <div className="flex flex-wrap justify-center gap-6 text-[#e0eaff]/50">
-                <span>© 2025 ResQLink Platform</span>
+                <span>© 2026 ResQLink Platform</span>
                 <span className="hover:text-[#e0eaff]/70 transition-colors duration-300 cursor-pointer">
                   Privacy Policy
                 </span>
@@ -169,5 +175,6 @@ export default function App() {
         </div>
       </section>
     </div>
+    </DemoModeProvider>
   );
 }
